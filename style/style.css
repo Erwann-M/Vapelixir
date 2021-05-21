@@ -1,0 +1,140 @@
+@font-face {
+    font-family: "wonderland";
+    src: url(../font/Beyond_Wonderland.ttf);
+}
+
+body {
+    background-color: rgb(244, 241, 222) ;
+}
+
+#main_container {
+    /* background-color: rgb(250, 248, 236); */
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#header {
+    display: flex;
+}
+
+#header img {
+    height: 200px;
+    margin: 2%;
+}
+
+#header h1, strong {
+    font-family: "wonderland";
+    font-size: 70px;
+    color: rgb(41, 43, 61);
+    font-weight: normal;
+    margin: 2%;
+}
+
+#navigation {
+    border-top: 1.5px solid rgb(61, 64, 91);
+    border-bottom: 1.5px solid rgb(61, 64, 91);
+}
+
+#navigation ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+#navigation ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(61, 64, 91);
+}
+
+#navigation ul li a:hover {
+    border-bottom: 2px solid rgb(61, 64, 91);
+}
+
+/* Page connection */
+
+#formulaire {
+    height: 567px;
+    width: 550px;
+    margin-top: 30px;
+    margin-left: 28%;
+    background-image: url(../img/cadre1.png);
+    text-align: center;
+}
+
+#form_connection {
+    padding-top: 35%;
+}
+
+#form_inscription {
+    padding-top: 20%;
+}
+
+#email, .mdp, .input_inscription {
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid rgb(61, 64, 91);
+    background-color: rgb(248, 248, 244);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 270px;
+}
+
+#email:hover, .mdp:hover, .input_inscription:hover {
+    background-color: #f3e1c5;
+}
+
+#email:focus, .mdp:focus, .input_inscription:focus {
+    background-color: #f3e1c5;
+    border-width: 2px;
+    outline: none;
+}
+
+#connect_btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    color: rgb(61, 64, 91);
+    font-size: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgb(244, 241, 222);
+    border: 2px solid rgb(61, 64, 91);
+    cursor: pointer;
+}
+
+#connect_btn:hover {
+    background-color: rgb(61, 64, 91);
+    color: rgb(244, 241, 222);
+}
+
+#demande_inscription {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: rgb(61, 64, 91);
+}
+
+#demande_inscription a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    color: rgb(61, 64, 91);
+}
+
+#demande_inscription a:hover {
+    color: rgb(48, 50, 71);
+    text-decoration: underline;
+}
+
+.erreur_form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e05f5f;
+}
+
+#valid_form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #81b29a;
+}
