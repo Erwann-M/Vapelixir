@@ -22,9 +22,32 @@
             $nom = $bdd->query('SELECT pseudo, photo_profil FROM membres WHERE id="'. $_SESSION['id'] .'"');
             $pseudo = $nom->fetch();
         ?>
-        <img src="img_profil/<?php echo $pseudo['photo_profil'] ?>" alt="">
-        <h1>Salut <?php echo $pseudo['pseudo'] ?></h1><br>
-        <a href="deconnection.php">Deconnexion</a>
+
+        <div id="left_container">
+            <img src="img_profil/<?php echo $pseudo['photo_profil'] ?>" alt="">
+            <h1>Salut <?php echo $pseudo['pseudo'] ?></h1><br>
+            <h2><a href="deconnection.php">Deconnexion</a></h2>
+            <h2><a href="creation_elixir.php">Ajouter une recette</a></h2>
+        </div>
+        <div id="right_container">
+            <h1>Mes recettes</h1>
+            <?php
+
+                $recettes = $bdd->query('SELECT id FROM eliquide WHERE id_createur="'. $_SESSION['id'] .'"');
+                $nbre_recettes = $recettes->fetch();
+
+                $nbre_tot_recettes = count(array($nbre_recettes));
+
+                if ($nbre_tot_recettes > 1) {
+                    echo "Vos recettes :";
+                }
+                else {
+                    echo "Vous n'avez pas de recettes enregistrées";
+                }
+                
+            ?>
+        </div>
+
 
     </div>
 </body>
