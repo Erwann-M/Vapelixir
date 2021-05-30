@@ -39,7 +39,15 @@
                 $nbre_tot_recettes = count(array($nbre_recettes));
 
                 if ($nbre_tot_recettes > 1) {
-                    echo "Vos recettes :";
+                    
+                    $number_while = 0;
+
+                    while ($nbre_tot_recettes != $number_while) {
+
+                        $affichage_recettes = $bdd->query('SELECT nom_liquide, id_createur, categorie, nbr_like, description_l, photo_liquide FROM eliquide WHERE id_createur="'. $_SESSION['id'] .'"');
+
+                    }
+
                 }
                 else {
                     echo "Vous n'avez pas de recettes enregistrées";
