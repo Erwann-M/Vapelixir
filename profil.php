@@ -44,7 +44,24 @@
 
                     while ($nbre_tot_recettes != $number_while) {
 
-                        $affichage_recettes = $bdd->query('SELECT nom_liquide, id_createur, categorie, nbr_like, description_l, photo_liquide FROM eliquide WHERE id_createur="'. $_SESSION['id'] .'"');
+                        $affichage_recettes = $bdd->query('SELECT id, nom_liquide, id_createur, categorie, nbr_like, description_l, photo_liquide FROM eliquide WHERE id_createur="'. $_SESSION['id'] .'"');
+                        $affichage_recettes_min = $affichage_recettes->fetch();
+                        ?>
+                            <div class="conteneur_recette">
+                                <img src="img_liquide/<?php echo $affichage_recettes_min['photo_liquide'] ?>" alt="">
+                                <h2><a href="affichage_recette.php?id_recette=<?php echo $affichage_recettes_min['id'] ?>"><?php echo $affichage_recettes_min['nom_liquide'] ?></a></h2>
+                                <?php
+                                    $createur = $bdd->query('SELECT pseudo FROM membres WHERE id="'. $affichage_recettes_min['id_createur'] .'"');
+                                    $nom_createur = $createur->fetch();
+                                ?>
+                                <p>Créé par : <?php echo $nom_createur['pseudo'] ?></p>
+                                <p>Categorie : <?php echo $affichage_recettes_min['categorie'] ?></p>
+                                <p><?php echo $affichage_recettes_min['description_l'] ?></p>
+                                <?php
+                                ?>
+
+                            </div>
+                        <?php
 
                     }
 
